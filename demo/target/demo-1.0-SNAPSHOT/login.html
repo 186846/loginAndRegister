@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<script type="text/javascript">
+    function checkLoginForm(){
+        let username = document.login_form.username;
+        let password = document.login_form.password;
+        if (username === "" || password === ""){
+            alert("信息不完整");
+            return false;
+        }
+        document.login_form.submit();
+        return true;
+    }
+</script>
+
+<body>
+<div class="login">
+    <form action="/checklogin" name="login_form" method="post">
+        <label>Username:<input type="text" name="username"></label><br/>
+        <label>Password:<input type="password" name="password"></label><br/>
+        <input type="button" value="login" onclick="checkLoginForm()">
+    </form>
+    <a href="/register.html">注册</a>
+</div>
+</body>
+</html>
